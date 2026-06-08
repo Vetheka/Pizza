@@ -1,0 +1,242 @@
+:root {
+    --primary: #2e7d32;
+    --primary-light: #4caf50;
+    --primary-dark: #1b5e20;
+    --accent: #8bc34a;
+    --text: #333;
+    --text-light: #666;
+    --bg: #f5f5f5;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-title i {
+    font-size: 1.5rem;
+}
+
+.header-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Orders Section */
+.orders-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.orders-table thead th {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+}
+
+.orders-table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.orders-table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.orders-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+    background-color: rgba(76, 175, 80, 0.05);
+}
+
+.orders-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-light);
+}
+
+.orders-table td:first-child {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.status {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.status-processing {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.status-done {
+    background-color: #e8f5e9;
+    color: var(--primary-dark);
+}
+
+.action-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    transform: translateY(-2px);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-light);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    color: var(--primary-light);
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .header-nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .orders-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
